@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Security Tips - Fake Website Detection</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f2937;
+    }
+
+    .tip-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 12px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .tip-header {
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tip-content {
+      margin-top: 10px;
+      display: none;
+      font-size: 15px;
+      color: #374151;
+    }
+
+    .active .tip-content {
+      display: block;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .active .arrow {
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Security Tips to Spot Fake Websites</h1>
+
+  <div class="tip-card">
+    <div class="tip-header">
+      1. Check the URL Carefully
+      <span class="arrow">▶</span>
+    </div>
+    <div class="tip-content">
+      Fake websites often mimic legitimate domains. Look for subtle misspellings or extra characters.
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-header">
+      2. Look for HTTPS
+      <span class="arrow">▶</span>
+    </div>
+    <div class="tip-content">
+      Ensure the site uses HTTPS. While not foolproof, a lack of it is a red flag.
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-header">
+      3. Avoid Clicking Suspicious Links
+      <span class="arrow">▶</span>
+    </div>
+    <div class="tip-content">
+      Don’t click links from unknown emails or messages. Hover to preview the link before clicking.
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-header">
+      4. Check Website Design & Content
+      <span class="arrow">▶</span>
+    </div>
+    <div class="tip-content">
+      Poor grammar, outdated design, and low-quality images are signs of a potentially fake website.
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-header">
+      5. Use Website Verification Tools
+      <span class="arrow">▶</span>
+    </div>
+    <div class="tip-content">
+      Use tools like Google Safe Browsing or your fake website detector to verify suspicious links.
+    </div>
+  </div>
+
+  <script>
+    const tipCards = document.querySelectorAll(".tip-card");
+
+    tipCards.forEach(card => {
+      card.querySelector(".tip-header").addEventListener("click", () => {
+        card.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>

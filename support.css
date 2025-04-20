@@ -1,0 +1,348 @@
+/* Support Hero */
+.support-hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .support-hero h1 {
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  .support-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  
+  .search-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .search-container form {
+    display: flex;
+  }
+  
+  .search-container input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+  }
+  
+  .search-container button {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: 0 20px;
+  }
+  
+  /* Support Options */
+  .support-options {
+    padding: 60px 0;
+  }
+  
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  
+  .option-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+  
+  .option-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .option-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(74, 108, 247, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  
+  .option-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .option-card h3 {
+    margin-bottom: 15px;
+  }
+  
+  .option-card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    padding: 60px 0;
+    background-color: #f8faff;
+  }
+  
+  .faq-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .faq-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .category-btn {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .category-btn.active,
+  .category-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .contact-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .contact-section > p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--text-muted);
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 30px;
+  }
+  
+  .contact-form-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+  }
+  
+  .contact-success {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .contact-success .success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 20px;
+  }
+  
+  .contact-success h3 {
+    margin-bottom: 15px;
+    color: #28a745;
+  }
+  
+  .contact-success p {
+    margin-bottom: 30px;
+  }
+  
+  .contact-info .info-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-info .info-card h3 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .contact-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .method-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(74, 108, 247, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .method-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .method-details h4 {
+    margin-bottom: 5px;
+  }
+  
+  .method-details p {
+    margin-bottom: 5px;
+    color: var(--text-muted);
+  }
+  
+  .method-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  
+  /* Guides Section */
+  .guides-section {
+    padding: 60px 0;
+  }
+  
+  .guides-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .guides-section > p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--text-muted);
+  }
+  
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .guide-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+  
+  .guide-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .guide-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(74, 108, 247, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  
+  .guide-icon img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .guide-card h3 {
+    margin-bottom: 15px;
+  }
+  
+  .guide-card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .options-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .guides-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .search-container form {
+      flex-direction: column;
+    }
+  
+    .search-container input {
+      border-radius: var(--border-radius);
+      margin-bottom: 10px;
+    }
+  
+    .search-container button {
+      border-radius: var(--border-radius);
+      width: 100%;
+    }
+  
+    .faq-categories {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .category-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .options-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .guides-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  

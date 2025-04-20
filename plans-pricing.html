@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans & Pricing - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="plans-pricing.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html">URL Checker</a></li>
+                    <li><a href="report-scam.html">Report a Scam</a></li>
+                    <li><a href="ping-lookup.html" >Ping Lookup</a></li>
+                    <li><a href="plans-pricing.html" class="active">Plans & Pricing</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pricing-hero">
+            <div class="container">
+                <h1>Plans & Pricing</h1>
+                <p>Choose the right plan for your online security needs</p>
+            </div>
+        </section>
+
+        <section class="pricing-plans">
+            <div class="container">
+                <div class="pricing-toggle">
+                    <span>Monthly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="billing-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Annual <span class="save-badge">Save 20%</span></span>
+                </div>
+                
+                <div class="plan-categories">
+                    <button class="plan-category-btn active" data-category="individual">Individual</button>
+                    <button class="plan-category-btn" data-category="business">Business</button>
+                    <button class="plan-category-btn" data-category="enterprise">Enterprise</button>
+                </div>
+                
+                <!-- Individual Plans -->
+                <div class="plans-container" id="individual-plans">
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3>Basic</h3>
+                                <div class="plan-price">
+                                    <span class="price monthly-price">₹0</span>
+                                    <span class="price annual-price hidden">₹0</span>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p>Essential protection for casual users</p>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>URL safety checking</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>5 URL checks per day</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Basic safety reports</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Report suspicious URLs</span>
+                                    </li>
+                                    <li class="feature-disabled">
+                                        <span class="feature-icon">✗</span>
+                                        <span>Bulk URL checking</span>
+                                    </li>
+                                    <li class="feature-disabled">
+                                        <span class="feature-icon">✗</span>
+                                        <span>API access</span>
+                                    </li>
+                                    <li class="feature-disabled">
+                                        <span class="feature-icon">✗</span>
+                                        <span>Browser extension</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <a href="register.html" class="btn-secondary">Sign Up Free</a>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3>Standard</h3>
+                                <div class="plan-price">
+                                    <span class="price monthly-price">₹499</span>
+                                    <span class="price annual-price hidden">₹399</span>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p>Enhanced protection for regular users</p>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Everything in Basic</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>25 URL checks per day</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Standard safety reports</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Browser extension</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Email alerts</span>
+                                    </li>
+                                    <li class="feature-disabled">
+                                        <span class="feature-icon">✗</span>
+                                        <span>Bulk URL checking</span>
+                                    </li>
+                                    <li class="feature-disabled">
+                                        <span class="feature-icon">✗</span>
+                                        <span>API access</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <a href="new-things/payment.html?plan=standard&billing=monthly" class="btn-secondary plan-link">Get Standard</a>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="plan-header">
+                                <h3>Premium</h3>
+                                <div class="plan-price">
+                                    <span class="price monthly-price">₹999</span>
+                                    <span class="price annual-price hidden">₹799</span>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p>Advanced protection for power users</p>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Everything in Standard</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Unlimited URL checks</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Detailed safety analysis</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Bulk URL checking (up to 100)</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Email alerts for risky sites</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Basic API access (100 calls/day)</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Priority support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <a href="payment.html?plan=premium&billing=monthly" class="btn-primary plan-link">Get Premium</a>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3>Family</h3>
+                                <div class="plan-price">
+                                    <span class="price monthly-price">₹1,499</span>
+                                    <span class="price annual-price hidden">₹1,199</span>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p>Complete protection for up to 5 family members</p>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Everything in Premium</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Up to 5 user accounts</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Family dashboard</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Parental controls</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Shared safe lists</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Real-time alerts</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Premium support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <a href="payment.html?plan=family&billing=monthly" class="btn-secondary plan-link">Get Family</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Plans -->
+                <div class="plans-container hidden" id="business-plans">
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3>Startup</h3>
+                                <div class="plan-price">
+                                    <span class="price monthly-price">₹2,499</span>
+                                    <span class="price annual-price hidden">₹1,999</span>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p>Essential protection for small teams</p>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Up to 10 user accounts</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Unlimited URL checks</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Bulk URL checking (up to 500)</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>API access (1,000 calls/day)</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Team management</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Basic analytics</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Business hours support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <a href="payment.html?plan=startup&billing=monthly" class="btn-secondary plan-link">Get Startup</a>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="plan-header">
+                                <h3>Business</h3>
+                                <div class="plan-price">
+                                    <span class="price monthly-price">₹4,999</span>
+                                    <span class="price annual-price hidden">₹3,999</span>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p>Complete protection for growing businesses</p>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Everything in Startup</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Up to 25 user accounts</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Unlimited bulk URL checking</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Advanced API access (10,000 calls/day)</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Custom integrations</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Advanced analytics dashboard</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Priority support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <a href="payment.html?plan=business&billing=monthly" class="btn-primary plan-link">Get Business</a>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3>Corporate</h3>
+                                <div class="plan-price">
+                                    <span class="price monthly-price">₹9,999</span>
+                                    <span class="price annual-price hidden">₹7,999</span>
+                                    <span class="period">/month</span>
+                                </div>
+                                <p>Advanced protection for larger organizations</p>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Everything in Business</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Up to 100 user accounts</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Advanced threat detection</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Enterprise API access (50,000 calls/day)</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Custom security policies</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Executive dashboard</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>24/7 dedicated support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <a href="payment.html?plan=corporate&billing=monthly" class="btn-secondary plan-link">Get Corporate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plans -->
+                <div class="plans-container hidden" id="enterprise-plans">
+                    <div class="enterprise-solutions">
+                        <div class="enterprise-solution-card">
+                            <div class="solution-header">
+                                <h3>Enterprise Custom</h3>
+                                <p>Tailored security solutions for large enterprises</p>
+                            </div>
+                            <div class="solution-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Custom user limits and permissions</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Dedicated account manager</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Custom API integration</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>On-premise deployment options</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Advanced security features</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Custom SLA</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>24/7 premium support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="solution-cta">
+                                <a href="support.html?inquiry=enterprise" class="btn-primary">Contact Sales</a>
+                            </div>
+                        </div>
+                        
+                        <div class="enterprise-solution-card">
+                            <div class="solution-header">
+                                <h3>Government & Education</h3>
+                                <p>Specialized solutions for government agencies and educational institutions</p>
+                            </div>
+                            <div class="solution-features">
+                                <ul>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Compliance with government regulations</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Special pricing for educational institutions</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Bulk deployment</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Enhanced security protocols</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Training and workshops</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-icon">✓</span>
+                                        <span>Dedicated support team</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="solution-cta">
+                                <a href="support.html?inquiry=government" class="btn-primary">Contact Sales</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="comparison">
+            <div class="container">
+                <h2>Feature Comparison</h2>
+                <div class="table-responsive">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Basic</th>
+                                <th>Standard</th>
+                                <th>Premium</th>
+                                <th>Family</th>
+                                <th>Business</th>
+                                <th>Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>URL Safety Checks</td>
+                                <td>5/day</td>
+                                <td>25/day</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>User Accounts</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td>25</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Detailed Safety Analysis</td>
+                                <td>Basic</td>
+                                <td>Standard</td>
+                                <td>Advanced</td>
+                                <td>Advanced</td>
+                                <td>Advanced</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Browser Extension</td>
+                                <td>-</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Bulk URL Checking</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Up to 100</td>
+                                <td>Up to 100</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>API Access</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>100 calls/day</td>
+                                <td>100 calls/day</td>
+                                <td>10,000 calls/day</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Team Management</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Basic</td>
+                                <td>Advanced</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Email Alerts</td>
+                                <td>-</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Custom Integrations</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Support</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>24/7</td>
+                            </tr>
+                            <tr>
+                                <td>Analytics Dashboard</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Basic</td>
+                                <td>Basic</td>
+                                <td>Advanced</td>
+                                <td>Custom</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Can I upgrade or downgrade my plan at any time?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, you can upgrade your plan at any time. The new rate will be prorated for the remainder of your billing cycle. Downgrades will take effect at the end of your current billing cycle.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Do you offer refunds?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>We offer a 14-day money-back guarantee for all paid plans. If you're not satisfied with our service, you can request a full refund within 14 days of your purchase.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            What payment methods do you accept?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>We accept all major credit and debit cards (Visa, Mastercard, RuPay, American Express), UPI payments (Google Pay, PhonePe, BHIM, Paytm), NetBanking from all major Indian banks, and popular digital wallets (Paytm, PhonePe, Amazon Pay, MobiKwik).</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Is there a contract or commitment?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>No, all our plans are subscription-based with no long-term contracts. You can cancel at any time. Annual plans offer a discount but can be canceled with a prorated refund for unused months.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Can I add more users to my plan later?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, you can add more users to Business and Enterprise plans at any time. Additional users are billed at a per-user rate based on your current plan. For Family plans, the limit is fixed at 5 users.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Do you offer discounts for non-profits or educational institutions?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, we offer special pricing for non-profit organizations, educational institutions, and government agencies. Please contact our sales team for more information about our discount programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The Premium plan has been a game-changer for our marketing team. We can now verify all URLs before including them in our campaigns."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/user4.svg" alt="User Avatar">
+                            <div>
+                                <h4>Rajesh Kumar</h4>
+                                <p>Marketing Director, TechSolutions India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"As a cybersecurity consultant, I recommend SafeURL Business to all my clients. The API integration is seamless and the bulk checking saves hours."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/user5.svg" alt="User Avatar">
+                            <div>
+                                <h4>Priya Sharma</h4>
+                                <p>Security Consultant, CyberShield</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The Family plan gives me peace of mind knowing that everyone in my household is protected from online scams and phishing attempts."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/user6.svg" alt="User Avatar">
+                            <div>
+                                <h4>Amit Patel</h4>
+                                <p>IT Professional & Parent</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="prev-btn" aria-label="Previous testimonial">❮</button>
+                    <button class="next-  aria-label="Previous testimonial">❮</button>
+                    <button class="next-btn" aria-label="Next testimonial">❯</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Secure Your Online Experience?</h2>
+                <p>Choose the plan that's right for you and start browsing safely today.</p>
+                <a href="#" class="btn-primary scroll-to-plans">View Plans</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="#" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="#" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="new-things/blog.html">Blog</a></li>
+                        <li><a href="#">Security Tips</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafe URL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="plans-pricing.js"></script>
+</body>
+</html>
+

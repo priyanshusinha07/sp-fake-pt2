@@ -1,0 +1,424 @@
+/* Payment Section */
+.payment-section {
+    padding: 60px 0;
+    background-color: #f8faff;
+    min-height: calc(100vh - 70px - 400px);
+  }
+  
+  .payment-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+  }
+  
+  .payment-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .payment-header h1 {
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .payment-header p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+  
+  .payment-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  /* Payment Details */
+  .payment-details {
+    padding: 30px;
+    border-right: 1px solid var(--border-color);
+  }
+  
+  .order-summary {
+    margin-bottom: 40px;
+  }
+  
+  .order-summary h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .plan-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8faff;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+  }
+  
+  .plan-name h3 {
+    margin-bottom: 5px;
+  }
+  
+  .plan-name span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  
+  .plan-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .price-breakdown {
+    margin-bottom: 20px;
+  }
+  
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .price-row.total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-bottom: none;
+    padding-top: 15px;
+  }
+  
+  .billing-cycle {
+    background-color: #f8faff;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+  }
+  
+  .billing-cycle p {
+    margin-bottom: 0;
+  }
+  
+  .billing-cycle span {
+    font-weight: 600;
+  }
+  
+  .billing-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+  }
+  
+  .coupon-section {
+    margin-bottom: 20px;
+  }
+  
+  .coupon-toggle {
+    text-align: center;
+  }
+  
+  .coupon-toggle button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .coupon-form {
+    margin-top: 15px;
+  }
+  
+  .coupon-form .input-group {
+    display: flex;
+  }
+  
+  .coupon-form input {
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .coupon-form button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .coupon-message {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .coupon-message.success {
+    color: #28a745;
+  }
+  
+  .coupon-message.error {
+    color: #dc3545;
+  }
+  
+  /* Payment Methods */
+  .payment-methods {
+    margin-top: 30px;
+  }
+  
+  .payment-methods h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .payment-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    overflow-x: auto;
+  }
+  
+  .payment-tab-btn {
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .payment-tab-btn.active {
+    color: var(--primary-color);
+  }
+  
+  .payment-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+  }
+  
+  .payment-tab-content {
+    margin-top: 20px;
+  }
+  
+  .payment-logos, .upi-logos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .payment-logos img, .upi-logos img {
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  .upi-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .upi-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .qr-code-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .qr-code-container img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .popular-banks, .wallet-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .bank-option, .wallet-option {
+    text-align: center;
+  }
+  
+  .bank-option input, .wallet-option input {
+    display: none;
+  }
+  
+  .bank-option label, .wallet-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .bank-option label:hover, .wallet-option label:hover {
+    border-color: var(--primary-color);
+  }
+  
+  .bank-option input:checked + label, .wallet-option input:checked + label {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 108, 247, 0.05);
+  }
+  
+  .bank-option img, .wallet-option img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 15px 0;
+  }
+  
+  /* Payment Sidebar */
+  .payment-sidebar {
+    padding: 30px;
+    background-color: #f8faff;
+  }
+  
+  .plan-features-summary {
+    margin-bottom: 30px;
+  }
+  
+  .plan-features-summary h3 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .plan-features-summary ul {
+    padding-left: 10px;
+  }
+  
+  .plan-features-summary li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+  }
+  
+  .plan-features-summary li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  .payment-security, .payment-guarantee {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .security-icon, .guarantee-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(74, 108, 247, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .security-icon img, .guarantee-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .security-info h4, .guarantee-info h4 {
+    margin-bottom: 5px;
+  }
+  
+  .security-info p, .guarantee-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+  
+  .need-help {
+    text-align: center;
+  }
+  
+  .need-help h4 {
+    margin-bottom: 10px;
+  }
+  
+  .need-help p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .payment-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .payment-details {
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .payment-tabs {
+      flex-wrap: nowrap;
+    }
+    
+    .popular-banks, .wallet-options {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .upi-options {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .payment-details, .payment-sidebar {
+      padding: 20px;
+    }
+    
+    .plan-details {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .plan-price {
+      margin-top: 10px;
+    }
+    
+    .payment-tab-btn {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  

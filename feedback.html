@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html">URL Checker</a></li>
+                    <li><a href="report-scam.html">Report a Scam</a></li>
+                    <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="feedback-hero">
+            <div class="container">
+                <h1>Your Feedback Matters</h1>
+                <p>Help us improve SafeURL by sharing your thoughts and suggestions</p>
+            </div>
+        </section>
+
+        <section class="feedback-form-section">
+            <div class="container">
+                <div class="feedback-grid">
+                    <div class="feedback-form-container">
+                        <h2>Share Your Experience</h2>
+                        <p>We value your input and use it to make SafeURL better for everyone.</p>
+                        
+                        <form id="feedback-form">
+                            <div class="form-group">
+                                <label for="feedback-type">Type of Feedback *</label>
+                                <select id="feedback-type" name="feedback-type" required>
+                                    <option value="" disabled selected>Select feedback type</option>
+                                    <option value="general">General Feedback</option>
+                                    <option value="suggestion">Feature Suggestion</option>
+                                    <option value="bug">Bug Report</option>
+                                    <option value="compliment">Compliment</option>
+                                    <option value="complaint">Complaint</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="feedback-subject">Subject *</label>
+                                <input type="text" id="feedback-subject" name="feedback-subject" placeholder="Brief description of your feedback" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="feedback-message">Your Feedback *</label>
+                                <textarea id="feedback-message" name="feedback-message" rows="6" placeholder="Please provide details about your experience or suggestion..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="feedback-rating">How would you rate your overall experience with SafeURL?</label>
+                                <div class="rating-container">
+                                    <div class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5">
+                                        <label for="star5" title="5 stars">★</label>
+                                        <input type="radio" id="star4" name="rating" value="4">
+                                        <label for="star4" title="4 stars">★</label>
+                                        <input type="radio" id="star3" name="rating" value="3">
+                                        <label for="star3" title="3 stars">★</label>
+                                        <input type="radio" id="star2" name="rating" value="2">
+                                        <label for="star2" title="2 stars">★</label>
+                                        <input type="radio" id="star1" name="rating" value="1">
+                                        <label for="star1" title="1 star">★</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="feedback-screenshot">Attach Screenshot (Optional)</label>
+                                <input type="file" id="feedback-screenshot" name="feedback-screenshot" accept="image/*">
+                                <small>Upload a screenshot if relevant (max 5MB)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="feedback-email">Your Email (Optional)</label>
+                                <input type="email" id="feedback-email" name="feedback-email" placeholder="your@email.com">
+                                <small>We'll only use this to follow up on your feedback if necessary</small>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="feedback-anonymous" name="feedback-anonymous">
+                                <label for="feedback-anonymous">Submit anonymously</label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Submit Feedback</button>
+                                <button type="reset" class="btn-secondary">Clear Form</button>
+                            </div>
+                        </form>
+                        
+                        <div id="feedback-success" class="feedback-success hidden">
+                            <div class="success-icon">✓</div>
+                            <h3>Thank You!</h3>
+                            <p>Your feedback has been submitted successfully. We appreciate you taking the time to help us improve.</p>
+                            <button id="submit-another-feedback" class="btn-secondary">Submit Another Feedback</button>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback-info">
+                        <div class="info-card">
+                            <h3>Why Your Feedback Matters</h3>
+                            <p>At SafeURL, we're committed to continuous improvement. Your feedback helps us:</p>
+                            <ul>
+                                <li>Identify areas where we can enhance our service</li>
+                                <li>Develop new features that meet your needs</li>
+                                <li>Fix issues you may encounter</li>
+                                <li>Understand what's working well</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>What Happens Next?</h3>
+                            <ol>
+                                <li>Our team reviews all feedback submissions</li>
+                                <li>We categorize and prioritize suggestions and issues</li>
+                                <li>Actionable items are added to our development roadmap</li>
+                                <li>If you provided your email, we may contact you for more details</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"I suggested a feature to bulk check URLs last year, and three months later it was implemented. It's great to see a company that actually listens to its users!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/user8.svg" alt="User Avatar">
+                                <div>
+                                    <h4>Maria Gonzalez</h4>
+                                    <p>Premium User</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recent-improvements">
+            <div class="container">
+                <h2>Recent Improvements Based on User Feedback</h2>
+                <p>Here are some of the changes we've made based on feedback from users like you:</p>
+                
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <div class="improvement-icon">
+                            <img src="images/browser.svg" alt="Browser Icon">
+                        </div>
+                        <div class="improvement-content">
+                            <h3>Browser Extension</h3>
+                            <p>We developed browser extensions for Chrome, Firefox, and Edge to make URL checking more convenient.</p>
+                            <span class="improvement-date">March 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="improvement-card">
+                        <div class="improvement-icon">
+                            <img src="images/bulk.svg" alt="Bulk Icon">
+                        </div>
+                        <div class="improvement-content">
+                            <h3>Bulk URL Checking</h3>
+                            <p>Added the ability to check multiple URLs at once, saving time for users who need to verify many links.</p>
+                            <span class="improvement-date">January 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="improvement-card">
+                        <div class="improvement-icon">
+                            <img src="images/dark-mode.svg" alt="Dark Mode Icon">
+                        </div>
+                        <div class="improvement-content">
+                            <h3>Dark Mode</h3>
+                            <p>Implemented a dark mode option for the dashboard to reduce eye strain during nighttime use.</p>
+                            <span class="improvement-date">December 2023</span>
+                        </div>
+                    </div>
+                    
+                    <div class="improvement-card">
+                        <div class="improvement-icon">
+                            <img src="images/api.svg" alt="API Icon">
+                        </div>
+                        <div class="improvement-content">
+                            <h3>Enhanced API</h3>
+                            <p>Expanded our API capabilities and improved documentation based on developer feedback.</p>
+                            <span class="improvement-date">October 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="feedback-cta">
+            <div class="container">
+                <h2>Have a Specific Feature Request?</h2>
+                <p>Join our community forum to discuss feature ideas with other users and our development team.</p>
+                <a href="#" class="btn-primary">Visit Community Forum</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" aria-label="Facebook"><img src="images/Facebook.jpeg" alt="Facebook"></a>
+                        <a href="https://x.com/?lang=en-in" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><img src="images/instragram.jpeg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/Linkedin.jpeg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="new-things\blog.html">Blog</a></li>
+                        <li><a href="new-things\security.html">Security Tips</a></li>
+                        <li><a href="new-things\api.html">API Documentation</a></li>
+                        <li><a href="new-things\patner.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="new-things\terms.html">Terms of Service</a></li>
+                        <li><a href="new-things\privacy.html">Privacy Policy</a></li>
+                        <li><a href="new-things\cookie.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafeURL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="feedback.js"></script>
+</body>
+</html>
+

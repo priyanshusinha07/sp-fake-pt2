@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html">URL Checker</a></li>
+                    <li><a href="report-scam.html">Report a Scam</a></li>
+                    <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                    <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li  id="auth-nav-item"><a href="register.html"class="active">Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="register-section">
+            <div class="container">
+                <div class="register-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="register">Register</button>
+                        <button class="tab-btn" data-tab="login">Login</button>
+                    </div>
+                    
+                    <div class="tab-content" id="register-tab">
+                        <h2>Create Your Account</h2>
+                        <p>Join SafeURL to protect yourself from online scams and malicious websites.</p>
+                        
+                        <div class="social-login">
+                            <button class="social-btn google">
+                                <img src="images/Google.jpeg" alt="Google Icon">
+                                <span>Continue with Google</span>
+                            </button>
+                            <button class="social-btn facebook">
+                                <img src="images/facebook.jpeg" alt="Facebook Icon">
+                                <span>Continue with Facebook</span>
+                            </button>
+                        </div>
+                        
+                        <div class="divider">
+                            <span>or register with email</span>
+                        </div>
+                        
+                        <form id="register-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password *</label>
+                                <div class="password-input">
+                                    <input type="password" id="password" name="password" required>
+                                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                        <img src="images/Eye.jpeg" alt="Show password">
+                                    </button>
+                                </div>
+                                <div class="password-strength">
+                                    <div class="strength-meter">
+                                        <span class="meter-segment"></span>
+                                        <span class="meter-segment"></span>
+                                        <span class="meter-segment"></span>
+                                        <span class="meter-segment"></span>
+                                    </div>
+                                    <span class="strength-text">Password strength</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password *</label>
+                                <div class="password-input">
+                                    <input type="password" id="confirm-password" name="confirm-password" required>
+                                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                        <img src="images/Eye.jpeg" alt="Show password">
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms-agree" name="terms-agree" required>
+                                <label for="terms-agree">I agree to the <a href="#">Terms of Service</a> and <a href="new-things\terms.html">Privacy Policy</a> *</label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="marketing-agree" name="marketing-agree">
+                                <label for="marketing-agree">I'd like to receive updates and marketing emails (optional)</label>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary btn-full">Create Account</button>
+                        </form>
+                    </div>
+                    
+                    <div class="tab-content hidden" id="login-tab">
+                        <h2>Welcome Back</h2>
+                        <p>Log in to your SafeURL account to access your dashboard.</p>
+                        
+                        <div class="social-login">
+                            <button class="social-btn google">
+                                <img src="images/Google.jpeg" alt="Google Icon">
+                                <span>Continue with Google</span>
+                            </button>
+                            <button class="social-btn facebook">
+                                <img src="images/Facebook.jpeg" alt="Facebook Icon">
+                                <span>Continue with Facebook</span>
+                            </button>
+                        </div>
+                        
+                        <div class="divider">
+                            <span>or log in with email</span>
+                        </div>
+                        
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="login-email">Email Address *</label>
+                                <input type="email" id="login-email" name="login-email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="login-password">Password *</label>
+                                <div class="password-input">
+                                    <input type="password" id="login-password" name="login-password" required>
+                                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                        <img src="images/Eye.jpeg" alt="Show password">
+                                    </button>
+                                </div>
+                                <div class="forgot-password">
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <label for="remember-me">Remember me on this device</label>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary btn-full">Log In</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="register-info">
+                    <div class="register-image">
+                        <img src="images/secure-login.jpg" alt="Secure Login Illustration">
+                    </div>
+                    <div class="info-card">
+                        <h3>Why Create an Account?</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <div class="benefit-icon">
+                                    <img src="images/record.jpg" alt="History Icon">
+                                </div>
+                                <div class="benefit-text">
+                                    <h4>Save Your History</h4>
+                                    <p>Keep a record of all URLs you've checked for future reference.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <img src="images/alert.jpeg" alt="Notification Icon">
+                                </div>
+                                <div class="benefit-text">
+                                    <h4>Get Alerts</h4>
+                                    <p>Receive notifications when previously safe sites become compromised.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <img src="images/benifit.jpeg" alt="Devices Icon">
+                                </div>
+                                <div class="benefit-text">
+                                    <h4>Sync Across Devices</h4>
+                                    <p>Access your SafeURL dashboard from any device, anywhere.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <img src="images/upgrade.jpeg" alt="Upgrade Icon">
+                                </div>
+                                <div class="benefit-text">
+                                    <h4>Upgrade Anytime</h4>
+                                    <p>Start with a free account and upgrade to premium features when needed.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Creating an account was the best decision I made for my online security. Now I can check any suspicious link before clicking."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/umang.png" alt="User Avatar">
+                            <div>
+                                <h4>Umang Sharma</h4>
+                                <p>SafeURL User</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Profile Modal -->
+        <div id="profile-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <span id="profile-initials">JD</span>
+                    </div>
+                    <h2 id="profile-name">John Doe</h2>
+                    <p id="profile-email">john.doe@example.com</p>
+                </div>
+                <div class="profile-actions">
+                    <button id="view-profile-btn" class="btn-secondary">View Profile</button>
+                    <button id="sign-out-btn" class="btn-primary">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" aria-label="Facebook"><img src="images/Facebook.jpeg" alt="Facebook"></a>
+                        <a href="https://x.com/?lang=en-in" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><img src="images/instragram.jpeg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/Linkedin.jpeg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="new-things\blog.html">Blog</a></li>
+                        <li><a href="new-things\security.html">Security Tips</a></li>
+                        <li><a href="new-things\api.html">API Documentation</a></li>
+                        <li><a href="new-things\patner.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="new-things\terms.html">Terms of Service</a></li>
+                        <li><a href="new-things\privacy.html">Privacy Policy</a></li>
+                        <li><a href="new-things\cookie.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafe URL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>

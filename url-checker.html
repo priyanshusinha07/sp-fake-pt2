@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Checker - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="url-checker.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html" class="active">URL Checker</a></li>
+                    <li><a href="report-scam.html">Report a Scam</a></li>
+                    <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                    <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="register.html" >Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="url-checker-hero">
+            <div class="container">
+                <h1>URL Checker</h1>
+                <p>Verify the safety of any URL before you visit it</p>
+            </div>
+        </section>
+
+        <section class="url-checker-tool">
+            <div class="container">
+                <div class="checker-card">
+                    <h2>Enter a URL to check</h2>
+                    <p>Our system will verify if the URL is safe or potentially dangerous.</p>
+                    
+                    <form id="url-form">
+                        <div class="input-group">
+                            <input type="url" id="url-input" placeholder="https://example.com" required>
+                            <button type="submit" class="btn-primary">Check URL</button>
+                        </div>
+                    </form>
+                    
+                    <div id="result" class="result-container hidden">
+                        <div class="result-header">
+                            <h3>Result:</h3>
+                            <span id="url-display"></span>
+                        </div>
+                        <div id="result-content" class="result-content">
+                            <!-- Results will be displayed here -->
+                        </div>
+                    </div>
+                    
+                    <div id="loading" class="loading-container hidden">
+                        <div class="spinner"></div>
+                        <p>Checking URL safety...</p>
+                    </div>
+                    
+                    <div class="recent-checks">
+                        <h3>Recent Checks</h3>
+                        <ul id="recent-checks-list">
+                            <!-- Recent checks will be displayed here -->
+                            <li class="no-checks">No recent checks</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>How it works</h3>
+                    <ol>
+                        <li>Enter the complete URL you want to check</li>
+                        <li>Our system compares it against our database of known safe and malicious websites</li>
+                        <li>Get instant results about the safety of the URL</li>
+                    </ol>
+                    
+                    <div class="tip-box">
+                        <h4>Pro Tip</h4>
+                        <p>Always check URLs in emails, messages, or social media posts before clicking, especially if they ask for personal information.</p>
+                    </div>
+                    
+                    <div class="upgrade-box">
+                        <h4>Need more features?</h4>
+                        <p>Upgrade to our Premium plan for:</p>
+                        <ul>
+                            <li>Bulk URL checking</li>
+                            <li>API access</li>
+                            <li>Browser extension</li>
+                            <li>Detailed threat analysis</li>
+                        </ul>
+                        <a href="plans-pricing.html" class="btn-secondary">View Plans</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            How accurate is the URL checker?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Our URL checker uses a comprehensive database of known safe and malicious websites that is updated regularly. While we strive for high accuracy, no system is perfect. We recommend using multiple security measures for critical situations.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Can I check multiple URLs at once?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Bulk URL checking is available with our Premium and Business plans. This feature allows you to upload a CSV file with multiple URLs for batch processing.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            How do you determine if a URL is safe?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>We use a combination of methods including database matching against known safe/malicious sites, domain age analysis, SSL certificate verification, and reputation scoring based on user reports.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            What if a URL isn't in your database?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>If a URL isn't in our database, we'll indicate that it's unknown and provide a caution notice. Premium users receive additional analysis for unknown URLs based on various risk factors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" aria-label="Facebook"><img src="images/Facebook.jpeg" alt="Facebook"></a>
+                        <a href="https://x.com/?lang=en-in" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><img src="images/instragram.jpeg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/Linkedin.jpeg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="new-things\blog.html">Blog</a></li>
+                        <li><a href="new-things\security-tips.html">Security Tips</a></li>
+                        <li><a href="new-things\api.html">API Documentation</a></li>
+                        <li><a href="new-things\patner.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="new-things\terms.html">Terms of Service</a></li>
+                        <li><a href="new-things\privacy.html">Privacy Policy</a></li>
+                        <li><a href="new-things\cookie.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafe URL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="url-checker.js"></script>
+</body>
+</html>
+

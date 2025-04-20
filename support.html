@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html">URL Checker</a></li>
+                    <li><a href="report-scam.html">Report a Scam</a></li>
+                    <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                    <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                    <li><a href="register.html" >Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="support-hero">
+            <div class="container">
+                <h1>Support Center</h1>
+                <p>We're here to help you stay safe online</p>
+                
+                <div class="search-container">
+                    <form id="support-search">
+                        <input type="text" id="search-input" placeholder="Search for help topics...">
+                        <button type="submit" class="btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-options">
+            <div class="container">
+                <div class="options-grid">
+                    <div class="option-card">
+                        <div class="option-icon">
+                            <img src="images/ask.png" alt="FAQ Icon">
+                        </div>
+                        <h3>Frequently Asked Questions</h3>
+                        <p>Find answers to common questions about our services.</p>
+                        <a href="#faq-section" class="btn-text">Browse FAQs</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <div class="option-icon">
+                            <img src="images/contact.png" alt="Contact Icon">
+                        </div>
+                        <h3>Contact Support</h3>
+                        <p>Get in touch with our support team for personalized help.</p>
+                        <a href="#contact-section" class="btn-text">Contact Us</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <div class="option-icon">
+                            <img src="images/guide.png" alt="Guide Icon">
+                        </div>
+                        <h3>User Guides</h3>
+                        <p>Step-by-step guides to help you use our services effectively.</p>
+                        <a href="#guides-section" class="btn-text">View Guides</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <div class="option-icon">
+                            <img src="images/forum.png" alt="Community Icon">
+                        </div>
+                        <h3>Community Forum</h3>
+                        <p>Join discussions and get help from other SafeURL users.</p>
+                        <a href="#" class="btn-text">Visit Forum</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq-section" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="general">General</button>
+                    <button class="category-btn" data-category="account">Account</button>
+                    <button class="category-btn" data-category="url-checker">URL Checker</button>
+                    <button class="category-btn" data-category="billing">Billing</button>
+                    <button class="category-btn" data-category="technical">Technical</button>
+                </div>
+                
+                <div class="faq-content" id="general">
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                What is SafeURL?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>SafeURL is an online service that helps users verify the safety of URLs before visiting them. Our system checks URLs against a comprehensive database of known safe and malicious websites to protect you from phishing attempts, scams, and malware.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How accurate is SafeURL?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>SafeURL uses a combination of database matching, domain analysis, and user reports to provide highly accurate results. However, no system is 100% perfect, especially with newly created malicious sites. We continuously update our database to improve accuracy.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                Is my data safe with SafeURL?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Yes, we take data privacy very seriously. We do not store the full URLs you check unless they are reported as malicious. We use industry-standard encryption and security practices to protect all user data. For more details, please review our Privacy Policy.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                Can I use SafeURL on mobile devices?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Yes, SafeURL is fully responsive and works on all modern mobile devices. Premium and Business users can also access our mobile apps for iOS and Android for a more integrated experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-content hidden" id="account">
+                    <!-- Account FAQs would go here -->
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How do I create an account?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>To create an account, click on the "Register" button in the top navigation menu. Fill out the registration form with your email address and create a password. You'll receive a verification email to confirm your account.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                I forgot my password. How do I reset it?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>On the login page, click the "Forgot Password" link. Enter your email address, and we'll send you a password reset link. Follow the instructions in the email to create a new password.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How do I change my email address?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>You can change your email address in your account settings. Log in to your account, go to "Profile Settings," and update your email address. You'll need to verify the new email address before the change takes effect.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-content hidden" id="url-checker">
+                    <!-- URL Checker FAQs would go here -->
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How does the URL checker work?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Our URL checker compares the URL you enter against our database of known safe and malicious websites. It also analyzes various aspects of the URL and website, such as domain age, SSL certificate, and reputation score, to determine its safety level.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                What does "Unknown" result mean?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>An "Unknown" result means that the URL is not in our database of known safe or malicious websites. This often happens with new or rarely visited websites. We recommend exercising caution when visiting unknown URLs, especially if they ask for personal information.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                Can I check multiple URLs at once?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Bulk URL checking is available for Premium and Business plan subscribers. With this feature, you can upload a CSV file containing multiple URLs or paste a list of URLs to check them all at once.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-content hidden" id="billing">
+                    <!-- Billing FAQs would go here -->
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How do I upgrade my plan?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>To upgrade your plan, log in to your account and go to "Subscription Settings." Select the plan you want to upgrade to and follow the payment instructions. Your new plan will be activated immediately after payment is processed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                Can I get a refund if I'm not satisfied?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Yes, we offer a 14-day money-back guarantee for all paid plans. If you're not satisfied with our service, you can request a full refund within 14 days of your purchase by contacting our support team.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How do I cancel my subscription?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>To cancel your subscription, log in to your account, go to "Subscription Settings," and click on "Cancel Subscription." Your subscription will remain active until the end of your current billing cycle, after which it will not renew.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-content hidden" id="technical">
+                    <!-- Technical FAQs would go here -->
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How do I install the browser extension?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Our browser extension is available for Chrome, Firefox, and Edge. Log in to your Premium or Business account, go to "Browser Extension" in your dashboard, and follow the installation instructions for your browser.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                How do I use the API?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>API access is available for Premium and Business subscribers. In your account dashboard, go to "API Access" to generate your API key and view the documentation. The documentation includes examples and code snippets for integrating with our API.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                The website is not loading properly. What should I do?
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>If you're experiencing issues with our website, try clearing your browser cache and cookies, or try using a different browser. If the problem persists, please contact our support team with details about the issue, including your device, browser, and any error messages you're seeing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact-section" class="contact-section">
+            <div class="container">
+                <h2>Contact Support</h2>
+                <p>Can't find what you're looking for? Our support team is here to help.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Your Name *</label>
+                                <input type="text" id="contact-name" name="contact-name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-email">Email Address *</label>
+                                <input type="email" id="contact-email" name="contact-email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-subject">Subject *</label>
+                                <input type="text" id="contact-subject" name="contact-subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-category">Category</label>
+                                <select id="contact-category" name="contact-category">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="account">Account Issues</option>
+                                    <option value="billing">Billing Questions</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">Message *</label>
+                                <textarea id="contact-message" name="contact-message" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="contact-terms" name="contact-terms" required>
+                                <label for="contact-terms">I agree to the processing of my data as per the Privacy Policy *</label>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">Send Message</button>
+                        </form>
+                        
+                        <div id="contact-success" class="contact-success hidden">
+                            <div class="success-icon">✓</div>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for contacting us. We'll get back to you as soon as possible, usually within 24 hours.</p>
+                            <button id="send-another" class="btn-secondary">Send Another Message</button>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <h3>Support Hours</h3>
+                            <p>Our support team is available:</p>
+                            <ul>
+                                <li><strong>Monday - Friday:</strong> 9:00 AM - 8:00 PM EST</li>
+                                <li><strong>Saturday:</strong> 10:00 AM - 6:00 PM EST</li>
+                                <li><strong>Sunday:</strong> Closed</li>
+                            </ul>
+                            <p>Business and Enterprise customers have access to 24/7 priority support.</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Alternative Contact Methods</h3>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <img src="images/email.png" alt="Email Icon">
+                                </div>
+                                <div class="method-details">
+                                    <h4>Email</h4>
+                                    <p>SinhasafeURL123@Gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <img src="images/phone.jpg" alt="Phone Icon">
+                                </div>
+                                <div class="method-details">
+                                    <h4>Phone</h4>
+                                    <p>+91 9090909090</p>
+                                    <p class="method-note">Business & Enterprise customers only</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <img src="images/chat.png" alt="Chat Icon">
+                                </div>
+                                <div class="method-details">
+                                    <h4>Live Chat</h4>
+                                    <p>Available during support hours</p>
+                                    <a href="new-thing/chatbox.html" class="btn-text">Start Chat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="guides-section" class="guides-section">
+            <div class="container">
+                <h2>User Guides</h2>
+                <p>Step-by-step guides to help you get the most out of SafeURL</p>
+                
+                <div class="guides-grid">
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <img src="images/start.jpeg" alt="Getting Started Icon">
+                        </div>
+                        <h3>Getting Started</h3>
+                        <p>Learn the basics of using SafeURL to check website safety.</p>
+                        <a href="#" class="btn-text">Read Guide</a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <img src="images/browser.png" alt="Browser Extension Icon">
+                        </div>
+                        <h3>Browser Extension</h3>
+                        <p>How to install and use the SafeURL browser extension.</p>
+                        <a href="#" class="btn-text">Read Guide</a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <img src="images/api.png" alt="API Icon">
+                        </div>
+                        <h3>API Integration</h3>
+                        <p>Technical guide for integrating with the SafeURL API.</p>
+                        <a href="#" class="btn-text">Read Guide</a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <img src="images/url.jpeg" alt="Bulk Check Icon">
+                        </div>
+                        <h3>Bulk URL Checking</h3>
+                        <p>How to check multiple URLs efficiently.</p>
+                        <a href="#" class="btn-text">Read Guide</a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <img src="images/team.jpeg" alt="Team Management Icon">
+                        </div>
+                        <h3>Team Management</h3>
+                        <p>Managing users and permissions for Business accounts.</p>
+                        <a href="#" class="btn-text">Read Guide</a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <div class="guide-icon">
+                            <img src="images/security-image.jpg" alt="Security Icon">
+                        </div>
+                        <h3>Security Best Practices</h3>
+                        <p>Tips for staying safe online beyond URL checking.</p>
+                        <a href="#" class="btn-text">Read Guide</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" aria-label="Facebook"><img src="images/Facebook.jpeg" alt="Facebook"></a>
+                        <a href="https://x.com/?lang=en-in" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><img src="images/instragram.jpeg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/Linkedin.jpeg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="new-things\blog.html">Blog</a></li>
+                        <li><a href="new-things\security.html">Security Tips</a></li>
+                        <li><a href="new-things\api.html">API Documentation</a></li>
+                        <li><a href="new-things\patner.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="new-things\terms.html">Terms of Service</a></li>
+                        <li><a href="new-things\privacy.html">Privacy Policy</a></li>
+                        <li><a href="new-things\cookie.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafe URL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="support.js"></script>
+</body>
+</html>
+

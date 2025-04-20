@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Website Detection Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        #search {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        main {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .post {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            color: #333;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fake Website Detection Blog</h1>
+        <input type="text" id="search" placeholder="Search articles...">
+    </header>
+    
+    <main id="blog-posts">
+        <article class="post">
+            <h2>How to Identify a Fake Website</h2>
+            <p>Learn key indicators that can help you spot a fake website and protect yourself online.</p>
+        </article>
+        
+        <article class="post">
+            <h2>Top 5 Scams to Avoid in 2025</h2>
+            <p>Avoid these common online scams and stay secure in the digital world.</p>
+        </article>
+        
+        <article class="post">
+            <h2>Best Tools for Detecting Fake Websites</h2>
+            <p>Explore the top tools and techniques used to analyze the authenticity of a website.</p>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Fake Website Detection Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('search').addEventListener('keyup', function() {
+            let searchValue = this.value.toLowerCase();
+            let posts = document.querySelectorAll('.post');
+            posts.forEach(post => {
+                let title = post.querySelector('h2').innerText.toLowerCase();
+                if (title.includes(searchValue)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- This is a simple HTML template for a blog page focused on fake website detection. It includes a search bar, a list of articles, and basic styling. The JavaScript function filters the articles based on the search input. --> 
+<!-- The articles are placeholders and can be replaced with actual content. The footer contains copyright information. This template is responsive and should work well on various devices. --> 
+<!-- The design is clean and modern, making it easy for users to navigate and find relevant information. The use of flexbox allows for a flexible layout that adapts to different screen sizes. --> 
+ 

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Lookup - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ping-lookup.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html">URL Checker</a></li>
+                    <li><a href="report-scam.html">Report a Scam</a></li>
+                    <li><a href="ping-lookup.html"class="active">Ping Lookup</a></li>
+                    <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="ping-hero">
+            <div class="container">
+                <h1>Ping Lookup Tool</h1>
+                <p>Check the latency between your location and servers around the world</p>
+            </div>
+        </section>
+
+        <section class="ping-tool">
+            <div class="container">
+                <div class="ping-grid">
+                    <div class="ping-form-container">
+                        <div class="ping-form-card">
+                            <h2>Enter Domain or IP Address</h2>
+                            <form id="ping-form">
+                                <div class="form-group">
+                                    <label for="ping-target">Domain or IP Address</label>
+                                    <div class="input-group">
+                                        <input type="text" id="ping-target" placeholder="example.com or 192.168.1.1" required>
+                                        <button type="submit" class="btn-primary">Ping</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Ping from Locations</label>
+                                    <div class="location-grid">
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-mumbai" name="locations" value="mumbai" checked>
+                                            <label for="location-mumbai">Mumbai</label>
+                                        </div>
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-delhi" name="locations" value="delhi" checked>
+                                            <label for="location-delhi">Delhi</label>
+                                        </div>
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-bangalore" name="locations" value="bangalore" checked>
+                                            <label for="location-bangalore">Bangalore</label>
+                                        </div>
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-chennai" name="locations" value="chennai" checked>
+                                            <label for="location-chennai">Chennai</label>
+                                        </div>
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-hyderabad" name="locations" value="hyderabad">
+                                            <label for="location-hyderabad">Hyderabad</label>
+                                        </div>
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-kolkata" name="locations" value="kolkata">
+                                            <label for="location-kolkata">Kolkata</label>
+                                        </div>
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-singapore" name="locations" value="singapore">
+                                            <label for="location-singapore">Singapore</label>
+                                        </div>
+                                        <div class="location-option">
+                                            <input type="checkbox" id="location-london" name="locations" value="london">
+                                            <label for="location-london">London</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="ping-count">Number of Pings</label>
+                                    <select id="ping-count">
+                                        <option value="5">5 pings</option>
+                                        <option value="10" selected>10 pings</option>
+                                        <option value="20">20 pings</option>
+                                        <option value="50">50 pings</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="ping-interval">Ping Interval</label>
+                                    <select id="ping-interval">
+                                        <option value="0.5">0.5 seconds</option>
+                                        <option value="1" selected>1 second</option>
+                                        <option value="2">2 seconds</option>
+                                        <option value="5">5 seconds</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="continuous-ping" name="continuous-ping">
+                                    <label for="continuous-ping">Continuous Ping (Premium Feature)</label>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="ping-history-card">
+                            <div class="card-header">
+                                <h3>Recent Ping History</h3>
+                                <button id="clear-history" class="btn-text">Clear History</button>
+                            </div>
+                            <div class="ping-history-list" id="ping-history">
+                                <div class="empty-history">No recent ping history</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ping-results-container">
+                        <div class="ping-results-card">
+                            <div class="card-header">
+                                <h2>Ping Results</h2>
+                                <div class="result-actions">
+                                    <button id="export-results" class="btn-secondary" disabled>Export Results</button>
+                                </div>
+                            </div>
+                            
+                            <div id="ping-status" class="ping-status">
+                                <div class="status-message">Enter a domain or IP address and click "Ping" to start</div>
+                            </div>
+                            
+                            <div id="ping-results" class="ping-results hidden">
+                                <div class="ping-summary">
+                                    <div class="summary-item">
+                                        <div class="summary-label">Target</div>
+                                        <div class="summary-value" id="summary-target">example.com</div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <div class="summary-label">IP Address</div>
+                                        <div class="summary-value" id="summary-ip">192.168.1.1</div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <div class="summary-label">Status</div>
+                                        <div class="summary-value" id="summary-status">
+                                            <span class="status-indicator online"></span> Online
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ping-tabs">
+                                    <button class="ping-tab active" data-tab="results-table">Table View</button>
+                                    <button class="ping-tab" data-tab="results-chart">Chart View</button>
+                                    <button class="ping-tab" data-tab="results-map">Map View</button>
+                                </div>
+                                
+                                <div class="ping-tab-content" id="results-table">
+                                    <table class="ping-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Location</th>
+                                                <th>Min (ms)</th>
+                                                <th>Avg (ms)</th>
+                                                <th>Max (ms)</th>
+                                                <th>Loss (%)</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ping-table-body">
+                                            <!-- Ping results will be added here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="ping-tab-content hidden" id="results-chart">
+                                    <div class="chart-container">
+                                        <canvas id="ping-chart"></canvas>
+                                    </div>
+                                </div>
+                                
+                                <div class="ping-tab-content hidden" id="results-map">
+                                    <div class="map-container">
+                                        <div id="ping-map"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ping-details">
+                                    <h3>Detailed Ping Log</h3>
+                                    <div class="ping-log" id="ping-log">
+                                        <!-- Ping log entries will be added here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ping-info-card">
+                            <h3>What is Ping?</h3>
+                            <p>Ping is a network utility that measures the round-trip time for packets sent from the local host to a destination computer and back. It helps determine the latency or delay between two network devices.</p>
+                            
+                            <h4>Understanding Ping Results</h4>
+                            <ul>
+                                <li><strong>Latency:</strong> The time it takes for a packet to travel from source to destination and back.</li>
+                                <li><strong>Min:</strong> The minimum round-trip time recorded during the ping test.</li>
+                                <li><strong>Avg:</strong> The average round-trip time of all ping requests.</li>
+                                <li><strong>Max:</strong> The maximum round-trip time recorded during the ping test.</li>
+                                <li><strong>Packet Loss:</strong> The percentage of packets that did not receive a response.</li>
+                            </ul>
+                            
+                            <div class="latency-guide">
+                                <h4>Latency Guide</h4>
+                                <div class="latency-item">
+                                    <span class="latency-indicator excellent"></span>
+                                    <div class="latency-info">
+                                        <span class="latency-label">Excellent</span>
+                                        <span class="latency-value">&lt; 50ms</span>
+                                    </div>
+                                </div>
+                                <div class="latency-item">
+                                    <span class="latency-indicator good"></span>
+                                    <div class="latency-info">
+                                        <span class="latency-label">Good</span>
+                                        <span class="latency-value">50-100ms</span>
+                                    </div>
+                                </div>
+                                <div class="latency-item">
+                                    <span class="latency-indicator fair"></span>
+                                    <div class="latency-info">
+                                        <span class="latency-label">Fair</span>
+                                        <span class="latency-value">100-200ms</span>
+                                    </div>
+                                </div>
+                                <div class="latency-item">
+                                    <span class="latency-indicator poor"></span>
+                                    <div class="latency-info">
+                                        <span class="latency-label">Poor</span>
+                                        <span class="latency-value">&gt; 200ms</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="premium-feature">
+                                <h4>Need More Features?</h4>
+                                <p>Upgrade to our Premium plan for:</p>
+                                <ul>
+                                    <li>Continuous ping monitoring</li>
+                                    <li>More server locations worldwide</li>
+                                    <li>Historical ping data analysis</li>
+                                    <li>Custom ping intervals</li>
+                                    <li>Email alerts for high latency</li>
+                                </ul>
+                                <a href="plans-pricing.html" class="btn-primary">Upgrade Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Why would I need to check ping?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Checking ping is useful for diagnosing network issues, optimizing online gaming performance, selecting the best server location for hosting websites, and ensuring smooth video conferencing. High ping times can indicate network congestion or routing problems that may affect your internet experience.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            What is a good ping time?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>For most internet activities, ping times under 100ms are considered good. For online gaming and real-time applications, ping times under 50ms are ideal. Anything over 200ms may cause noticeable lag in real-time applications. The acceptable ping time depends on your specific use case.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            How can I improve my ping time?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>To improve ping times, you can: use a wired connection instead of Wi-Fi, close bandwidth-heavy applications, upgrade your internet plan, use a gaming or low-latency VPN, connect to servers geographically closer to you, or upgrade your router. Sometimes, contacting your ISP about routing issues can also help.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            How accurate is this ping tool?
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Our ping tool provides a good approximation of network latency between our servers and the target domain or IP. However, actual ping times from your location may vary due to your specific internet connection, local network conditions, and the route your traffic takes. For the most accurate results specific to your connection, we recommend using command-line tools like ping or traceroute on your own device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" aria-label="Facebook"><img src="images/Facebook.jpeg" alt="Facebook"></a>
+                        <a href="https://x.com/?lang=en-in" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><img src="images/instragram.jpeg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/Linkedin.jpeg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="new-things\blog.html">Blog</a></li>
+                        <li><a href="new-things\security.html">Security Tips</a></li>
+                        <li><a href="new-things\api.html">API Documentation</a></li>
+                        <li><a href="new-things\patner.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafe URL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Chart.js for ping charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="main.js"></script>
+    <script src="ping-lookup.js"></script>
+</body>
+</html>

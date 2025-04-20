@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partner With Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .partner-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .partner-container h1 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #0070f3;
+    }
+
+    .partner-container p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 14px;
+      background-color: #0070f3;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background-color: #005bb5;
+    }
+
+    #successMessage {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="partner-container">
+    <h1>Become a Partner</h1>
+    <p>Join us in the fight against fake websites and cyber threats.</p>
+
+    <form id="partnerForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="organization" placeholder="Organization Name" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <textarea id="message" placeholder="Why do you want to partner with us?" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="successMessage" class="hidden">Thank you! We’ll get back to you soon.</div>
+  </div>
+
+  <script>
+    document.getElementById("partnerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const org = document.getElementById("organization").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !org || !phone || !message) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      // Simulate saving to storage (or send to server later)
+      const partnerData = { name, email, org, phone, message };
+      let savedPartners = JSON.parse(localStorage.getItem("partners")) || [];
+      savedPartners.push(partnerData);
+      localStorage.setItem("partners", JSON.stringify(savedPartners));
+
+      document.getElementById("partnerForm").reset();
+      document.getElementById("successMessage").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>

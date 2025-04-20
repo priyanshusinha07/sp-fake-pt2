@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat - Fake Website Detection</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f9;
+        }
+
+        /* Chatbox container styles */
+        .chatbox {
+            position: fixed;
+            width: 350px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: none;
+            flex-direction: column;
+            height: 400px;
+            max-height: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header section of chatbox */
+        .chatbox-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Header title */
+        .chatbox-header h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        /* Close button styles */
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Clear chat button styles */
+        .clear-btn {
+            background: none;
+            border: none;
+            color: #ff4d4d;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* Message display area styles */
+        .chatbox-messages {
+            padding: 10px;
+            overflow-y: auto;
+            flex-grow: 1;
+            font-size: 14px;
+            max-height: 250px;
+        }
+
+        /* Individual message styles */
+        .message {
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        /* Bot's message style */
+        .bot {
+            background-color: #e1f5fe;
+            color: #333;
+        }
+
+        /* User's message style */
+        .user {
+            text-align: right;
+            background-color: #c8e6c9;
+            color: #007bff;
+        }
+
+        /* Loading indicator style */
+        .loading {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Input field styles */
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: calc(100% - 60px);
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Send button styles */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 0 0 8px 8px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Floating button to open chatbox */
+        .chatbox-toggle {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .chatbox-toggle:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 400px) {
+            .chatbox {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chat box container -->
+    <div class="chatbox" aria-labelledby="chatboxHeader">
+        <div class="chatbox-header">
+            <h4 id="chatboxHeader">Fake Website Detection Help</h4>
+            <button class="close-btn" onclick="toggleChat()" aria-label="Close chat">X</button>
+        </div>
+        <div class="chatbox-messages" id="chatboxMessages">
+            <div class="message bot">Hello! I'm here to help you detect fake websites. How can I assist you?</div>
+        </div>
+        <input type="text" id="userInput" placeholder="Type your question..." onkeydown="handleInput(event)" aria-label="User  input" />
+        <button id="sendBtn" onclick="sendMessage()" aria-label="Send message">Send</button>
+        <button class="clear-btn" onclick="clearChat()" aria-label="Clear chat">Clear Chat</button>
+    </div>
+
+    <!-- Floating button to open the chatbox -->
+    <button class="chatbox-toggle" onclick="toggleChat()" aria-label="Open chat">Chat with us</button>
+
+    <script>
+        // Flag to check if chatbox is open or closed
+        let isChatOpen = false;
+
+        // Function to toggle the visibility of the chatbox
+        function toggleChat() {
+            const chatbox = document.querySelector('.chatbox');
+            isChatOpen = !isChatOpen;
+            chatbox.style.display = isChatOpen ? 'flex' : 'none';
+        }
+
+        // Function to send user input as a message
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (userInput === '') return; // Don't send if input is empty
+
+            // Display user message
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = userInput;
+            document.getElementById('chatboxMessages').appendChild(userMessage);
+
+            // Clear input field
+            document.getElementById('userInput').value = '';
+
+            // Show loading message
+            const loadingMessage = document.createElement('div');
+            loadingMessage.classList.add('message', 'loading');
+            loadingMessage.textContent = '...'; // Loading indicator
+            document.getElementById('chatboxMessages').appendChild(loadingMessage);
+
+            // Respond after a short delay
+            setTimeout(() => {
+                loadingMessage.remove(); // Remove loading message
+                getBotResponse(userInput);
+            }, 1000); // Adjust the delay as needed
+        }
+
+        // Handle 'Enter' key press to send the message
+        function handleInput(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Function to clear chat messages
+        function clearChat() {
+            document.getElementById('chatboxMessages').innerHTML = '';
+            const welcomeMessage = document.createElement('div');
+            welcomeMessage.classList.add('message', 'bot');
+            welcomeMessage.textContent = "Hello! I'm here to help you detect fake websites. How can I assist you?";
+            document.getElementById('chatboxMessages').appendChild(welcomeMessage);
+        }
+
+        // Function to get the chatbot's response based on user input
+        function getBotResponse(userMessage) {
+            let botMessage = '';
+
+            // Basic logic for bot responses based on user input
+            const lowerCaseMessage = userMessage.toLowerCase();
+
+            // Check for various phrases in the user input
+            if (lowerCaseMessage.includes('detect fake website') || lowerCaseMessage.includes('fake website')) {
+                botMessage = 'To detect a fake website: \n1. Check if the URL starts with "https://" \n2. Look for a padlock icon in the address bar \n3. Verify the website’s contact details, privacy policy, and reviews.';
+            } else if (lowerCaseMessage.includes('what is https')) {
+                botMessage = 'HTTPS (HyperText Transfer Protocol Secure) ensures the data between your browser and the website is encrypted, making it harder for attackers to access sensitive information.';
+            } else if (lowerCaseMessage.includes('phishing website')) {
+                botMessage = 'A phishing website is a fake site designed to look like a legitimate one to steal your personal information, such as usernames, passwords, or credit card details.';
+            } else if (lowerCaseMessage.includes('hi') || lowerCaseMessage.includes('hello')) {
+                botMessage = 'Hello! How can I assist you today? 😊';
+            } else if (lowerCaseMessage.includes('goodbye') || lowerCaseMessage.includes('bye')) {
+                botMessage = 'Goodbye! Stay safe and secure online! 👋';
+            } else if (lowerCaseMessage.includes('good day')) {
+                botMessage = 'Good day to you too! How can I help you today? ☀️';
+            } else if (lowerCaseMessage.includes('avoid phishing websites')) {
+                botMessage = 'To avoid phishing websites: \n1. Don’t click on suspicious links in emails. \n2. Always check the website’s URL carefully. \n3. Use two-factor authentication (2FA) for extra security.';
+            } else if (lowerCaseMessage.includes('fall for phishing')) {
+                botMessage = 'If you think you’ve fallen for a phishing website: \n1. Change your passwords immediately. \n2. Report the phishing attempt to the website and your bank if necessary. \n3. Scan your computer for malware.';
+            } else if (lowerCaseMessage.includes('check if a website is secure')) {
+                botMessage = 'To check if a website is secure: \n1. Look for "https://" in the URL. \n2. Check for a padlock icon in the address bar. \n3. Look for trust seals from recognized companies like Norton or McAfee.';
+            } else if (lowerCaseMessage.includes('is this website safe')) {
+                botMessage = 'You can check if a website is safe by reviewing its URL, checking for HTTPS, and verifying the legitimacy of the site using online tools like Google Safe Browsing or VirusTotal.';
+            } else {
+                botMessage = "I'm sorry, I didn't understand your question. Try asking about how to detect fake websites, phishing websites, or HTTPS.";
+            }
+
+            // Display bot's response
+            const botMessageElement = document.createElement('div');
+            botMessageElement.classList.add('message', 'bot');
+            botMessageElement.textContent = botMessage;
+            document.getElementById('chatboxMessages').appendChild(botMessageElement);
+
+            // Scroll to the bottom of the chatbox to show the latest message
+            document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
+        }
+    </script>
+
+</body>
+</html>

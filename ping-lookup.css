@@ -1,0 +1,551 @@
+/* Ping Hero */
+.ping-hero {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.ping-hero h1 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.ping-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Ping Tool */
+.ping-tool {
+  padding: 60px 0;
+}
+
+.ping-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+/* Ping Form */
+.ping-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ping-form-card,
+.ping-history-card,
+.ping-results-card,
+.ping-info-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.ping-form-card {
+  padding: 25px;
+}
+
+.ping-form-card h2 {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group input {
+  flex: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.location-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location-option input[type="checkbox"] {
+  width: auto;
+}
+
+.location-option label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Ping History */
+.ping-history-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #f8faff;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h3,
+.card-header h2 {
+  margin-bottom: 0;
+}
+
+.ping-history-list {
+  padding: 15px 25px;
+  overflow-y: auto;
+  max-height: 300px;
+  flex: 1;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background-color: rgba(74, 108, 247, 0.05);
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-target {
+  font-weight: 500;
+}
+
+.history-time {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.history-ping {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ping-value {
+  font-weight: 600;
+}
+
+.empty-history {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px;
+}
+
+/* Ping Results */
+.ping-results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ping-results-card {
+  flex: 1;
+}
+
+.result-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.ping-status {
+  padding: 50px 25px;
+  text-align: center;
+}
+
+.status-message {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.ping-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(74, 108, 247, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ping-results {
+  padding: 25px;
+}
+
+.ping-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.summary-item {
+  background-color: #f8faff;
+  padding: 15px;
+  border-radius: var(--border-radius);
+}
+
+.summary-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.summary-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-indicator.online {
+  background-color: #28a745;
+}
+
+.status-indicator.offline {
+  background-color: #dc3545;
+}
+
+.status-indicator.warning {
+  background-color: #ffc107;
+}
+
+/* Ping Tabs */
+.ping-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.ping-tab {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  position: relative;
+}
+
+.ping-tab.active {
+  color: var(--primary-color);
+}
+
+.ping-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+/* Ping Table */
+.ping-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+.ping-table th,
+.ping-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ping-table th {
+  background-color: #f8faff;
+  font-weight: 600;
+}
+
+.ping-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ping-table tr:hover {
+  background-color: rgba(74, 108, 247, 0.05);
+}
+
+.ping-status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Chart and Map */
+.chart-container,
+.map-container {
+  height: 400px;
+  margin-bottom: 25px;
+}
+
+#ping-map {
+  height: 100%;
+  background-color: #f8faff;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+/* Ping Log */
+.ping-details h3 {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ping-log {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #f8faff;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.log-entry {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.log-time {
+  color: var(--text-muted);
+}
+
+.log-location {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.log-success {
+  color: #28a745;
+}
+
+.log-error {
+  color: #dc3545;
+}
+
+/* Ping Info Card */
+.ping-info-card {
+  padding: 25px;
+}
+
+.ping-info-card h3 {
+  margin-bottom: 15px;
+}
+
+.ping-info-card h4 {
+  margin: 20px 0 10px;
+}
+
+.ping-info-card p,
+.ping-info-card ul {
+  margin-bottom: 20px;
+}
+
+.ping-info-card ul {
+  padding-left: 20px;
+}
+
+.ping-info-card li {
+  margin-bottom: 8px;
+}
+
+/* Latency Guide */
+.latency-guide {
+  background-color: #f8faff;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.latency-guide h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.latency-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.latency-item:last-child {
+  margin-bottom: 0;
+}
+
+.latency-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.latency-indicator.excellent {
+  background-color: #28a745;
+}
+
+.latency-indicator.good {
+  background-color: #17a2b8;
+}
+
+.latency-indicator.fair {
+  background-color: #ffc107;
+}
+
+.latency-indicator.poor {
+  background-color: #dc3545;
+}
+
+.latency-info {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.latency-label {
+  font-weight: 500;
+}
+
+.latency-value {
+  color: var(--text-muted);
+}
+
+/* Premium Feature */
+.premium-feature {
+  background-color: #f8faff;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.premium-feature h4 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.premium-feature ul {
+  margin-bottom: 20px;
+}
+
+.premium-feature .btn-primary {
+  display: inline-block;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 60px 0;
+  background-color: #f8faff;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .ping-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ping-form-container {
+    order: 1;
+  }
+
+  .ping-results-container {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .ping-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ping-tabs {
+    flex-wrap: wrap;
+  }
+
+  .ping-tab {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input {
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+  }
+
+  .input-group button {
+    border-radius: var(--border-radius);
+    width: 100%;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .result-actions {
+    width: 100%;
+  }
+}

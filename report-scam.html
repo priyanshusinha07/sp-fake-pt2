@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Scam - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="report-scam.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html">URL Checker</a></li>
+                    <li><a href="report-scam.html" class="active">Report a Scam</a></li>
+                    <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                    <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="report-hero">
+            <div class="container">
+                <h1>Report a Scam</h1>
+                <p>Help us make the internet safer by reporting suspicious websites</p>
+            </div>
+        </section>
+
+        <section class="report-form-section">
+            <div class="container">
+                <div class="report-grid">
+                    <div class="report-form-container">
+                        <h2>Submit a Report</h2>
+                        <p>Please provide as much information as possible about the suspicious website.</p>
+                        
+                        <form id="scam-report-form">
+                            <div class="form-group">
+                                <label for="scam-url">URL of Suspicious Website *</label>
+                                <input type="url" id="scam-url" name="scam-url" placeholder="https://example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="scam-type">Type of Scam *</label>
+                                <select id="scam-type" name="scam-type" required>
+                                    <option value="" disabled selected>Select a category</option>
+                                    <option value="phishing">Phishing</option>
+                                    <option value="malware">Malware Distribution</option>
+                                    <option value="fake-shop">Fake Online Shop</option>
+                                    <option value="investment">Investment Scam</option>
+                                    <option value="impersonation">Brand Impersonation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="scam-description">Description *</label>
+                                <textarea id="scam-description" name="scam-description" rows="5" placeholder="Please describe what makes this website suspicious..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="scam-evidence">Evidence (Optional)</label>
+                                <input type="file" id="scam-evidence" name="scam-evidence" accept="image/*,.pdf">
+                                <small>Upload screenshots or other evidence (max 5MB)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reporter-email">Your Email (Optional)</label>
+                                <input type="email" id="reporter-email" name="reporter-email" placeholder="your@email.com">
+                                <small>We'll notify you when we've reviewed this report</small>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms-agree" name="terms-agree" required>
+                                <label for="terms-agree">I confirm this report is accurate to the best of my knowledge *</label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Submit Report</button>
+                                <button type="reset" class="btn-secondary">Clear Form</button>
+                            </div>
+                        </form>
+                        
+                        <div id="report-success" class="report-success hidden">
+                            <div class="success-icon">✓</div>
+                            <h3>Thank You!</h3>
+                            <p>Your report has been submitted successfully. Our team will review it shortly.</p>
+                            <button id="submit-another" class="btn-secondary">Submit Another Report</button>
+                        </div>
+                    </div>
+                    
+                    <div class="report-info">
+                        <div class="info-card">
+                            <h3>Why Report Scams?</h3>
+                            <p>By reporting suspicious websites, you help:</p>
+                            <ul>
+                                <li>Protect other internet users from falling victim</li>
+                                <li>Improve our database of known threats</li>
+                                <li>Contribute to a safer online environment</li>
+                                <li>Alert authorities to new scam techniques</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>What Happens Next?</h3>
+                            <ol>
+                                <li>Our security team reviews your report</li>
+                                <li>The URL is analyzed and verified</li>
+                                <li>If confirmed as malicious, it's added to our database</li>
+                                <li>If you provided your email, we'll notify you of the outcome</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="info-card emergency-box">
+                            <h3>Already a Victim?</h3>
+                            <p>If you've already fallen victim to an online scam:</p>
+                            <ul>
+                                <li>Change your passwords immediately</li>
+                                <li>Contact your bank if financial information was compromised</li>
+                                <li>Report identity theft to appropriate authorities</li>
+                                <li>Consider credit monitoring services</li>
+                            </ul>
+                            <a href="support.html" class="btn-text">Get Help from Our Support Team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recent-reports">
+            <div class="container">
+                <h2>Recently Reported Scams</h2>
+                <p>These websites have been reported by our community and verified as malicious by our team.</p>
+                
+                <div class="reports-table-container">
+                    <table class="reports-table">
+                        <thead>
+                            <tr>
+                                <th>Date Reported</th>
+                                <th>URL (Redacted)</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-reports-table">
+                            <tr>
+                                <td>2024-03-15</td>
+                                <td>fre***ney.com</td>
+                                <td>Phishing</td>
+                                <td><span class="status-confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-03-14</td>
+                                <td>win***ize.com</td>
+                                <td>Fake Lottery</td>
+                                <td><span class="status-confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-03-13</td>
+                                <td>bank***unt.com</td>
+                                <td>Banking Fraud</td>
+                                <td><span class="status-confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-03-12</td>
+                                <td>disc***fer.com</td>
+                                <td>Fake Shop</td>
+                                <td><span class="status-reviewing">Reviewing</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-03-11</td>
+                                <td>cryp***est.com</td>
+                                <td>Investment Scam</td>
+                                <td><span class="status-confirmed">Confirmed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p class="reports-note">For privacy and security reasons, we partially redact reported URLs.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" aria-label="Facebook"><img src="images/Facebook.jpeg" alt="Facebook"></a>
+                        <a href="https://x.com/?lang=en-in" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><img src="images/instragram.jpeg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/Linkedin.jpeg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="ping-lookup.html">Ping Lookup</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="new-things\blog.html">Blog</a></li>
+                        <li><a href="new-things\security.html">Security Tips</a></li>
+                        <li><a href="new-things\api.html">API Documentation</a></li>
+                        <li><a href="new-things\patner.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="new-things\terms.html">Terms of Service</a></li>
+                        <li><a href="new-things\privacy.html">Privacy Policy</a></li>
+                        <li><a href="new-things\cookie.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafe URL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="report-scam.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment - SafeURL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SinhaSafe URL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="url-checker.html">URL Checker</a></li>
+                    <li><a href="report-scam.html">Report a Scam</a></li>
+                    <li><a href="ping-lookup.html" >Ping Lookup</a></li>
+                    <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="register.html" class="btn-primary">Register</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="payment-section">
+            <div class="container">
+                <div class="payment-container">
+                    <div class="payment-header">
+                        <h1>Complete Your Payment</h1>
+                        <p>You're just one step away from enhanced online security</p>
+                    </div>
+                    
+                    <div class="payment-grid">
+                        <div class="payment-details">
+                            <div class="order-summary">
+                                <h2>Order Summary</h2>
+                                <div class="plan-details">
+                                    <div class="plan-name">
+                                        <h3 id="selected-plan-name">Premium Plan</h3>
+                                        <span id="selected-plan-billing">Monthly Billing</span>
+                                    </div>
+                                    <div class="plan-price">
+                                        <span id="selected-plan-price">₹999</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="price-breakdown">
+                                    <div class="price-row">
+                                        <span>Subtotal</span>
+                                        <span id="subtotal">₹999</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <span>GST (18%)</span>
+                                        <span id="tax">₹179.82</span>
+                                    </div>
+                                    <div class="price-row total">
+                                        <span>Total</span>
+                                        <span id="total">₹1,178.82</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="billing-cycle">
+                                    <p>You will be charged <span id="billing-amount">₹1,178.82</span> <span id="billing-frequency">monthly</span>.</p>
+                                    <p class="billing-note">You can cancel or change your plan at any time.</p>
+                                </div>
+                                
+                                <div class="coupon-section">
+                                    <div class="coupon-toggle">
+                                        <button id="coupon-btn">Have a coupon code?</button>
+                                    </div>
+                                    <div class="coupon-form hidden" id="coupon-form">
+                                        <div class="input-group">
+                                            <input type="text" id="coupon-code" placeholder="Enter coupon code">
+                                            <button id="apply-coupon" class="btn-secondary">Apply</button>
+                                        </div>
+                                        <p id="coupon-message" class="coupon-message"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-methods">
+                                <h2>Payment Method</h2>
+                                
+                                <div class="payment-tabs">
+                                    <button class="payment-tab-btn active" data-tab="card">Credit/Debit Card</button>
+                                    <button class="payment-tab-btn" data-tab="upi">UPI</button>
+                                    <button class="payment-tab-btn" data-tab="netbanking">NetBanking</button>
+                                    <button class="payment-tab-btn" data-tab="wallet">Wallets</button>
+                                </div>
+                                
+                                <div class="payment-tab-content" id="card-tab">
+                                    <form id="card-payment-form">
+                                        <div class="form-group">
+                                            <label for="card-number">Card Number *</label>
+                                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="expiry-date">Expiry Date *</label>
+                                                <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cvv">CVV *</label>
+                                                <input type="password" id="cvv" placeholder="123" maxlength="3" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="card-name">Name on Card *</label>
+                                            <input type="text" id="card-name" placeholder="John Doe" required>
+                                        </div>
+                                        
+                                        <div class="payment-logos">
+                                            <img src="images/visa.svg" alt="Visa">
+                                            <img src="images/mastercard.svg" alt="Mastercard">
+                                            <img src="images/rupay.svg" alt="RuPay">
+                                            <img src="images/amex.svg" alt="American Express">
+                                        </div>
+                                        
+                                        <button type="submit" class="btn-primary btn-full">Pay Now</button>
+                                    </form>
+                                </div>
+                                
+                                <div class="payment-tab-content hidden" id="upi-tab">
+                                    <form id="upi-payment-form">
+                                        <div class="upi-options">
+                                            <div class="upi-option">
+                                                <input type="radio" id="upi-id" name="upi-method" value="upi-id" checked>
+                                                <label for="upi-id">Pay via UPI ID</label>
+                                            </div>
+                                            <div class="upi-option">
+                                                <input type="radio" id="upi-qr" name="upi-method" value="upi-qr">
+                                                <label for="upi-qr">Scan QR Code</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div id="upi-id-section">
+                                            <div class="form-group">
+                                                <label for="upi-id-input">Enter UPI ID *</label>
+                                                <input type="text" id="upi-id-input" placeholder="yourname@upi" required>
+                                            </div>
+                                            
+                                            <div class="upi-logos">
+                                                <img src="images/gpay.svg" alt="Google Pay">
+                                                <img src="images/phonepe.svg" alt="PhonePe">
+                                                <img src="images/paytm.svg" alt="Paytm">
+                                                <img src="images/bhim.svg" alt="BHIM">
+                                            </div>
+                                            
+                                            <button type="submit" class="btn-primary btn-full">Pay Now</button>
+                                        </div>
+                                        
+                                        <div id="upi-qr-section" class="hidden">
+                                            <div class="qr-code-container">
+                                                <img src="images/qr-code.svg" alt="UPI QR Code">
+                                            </div>
+                                            <p>Scan this QR code using any UPI app to make payment</p>
+                                            <div class="upi-logos">
+                                                <img src="images/gpay.svg" alt="Google Pay">
+                                                <img src="images/phonepe.svg" alt="PhonePe">
+                                                <img src="images/paytm.svg" alt="Paytm">
+                                                <img src="images/bhim.svg" alt="BHIM">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <div class="payment-tab-content hidden" id="netbanking-tab">
+                                    <form id="netbanking-payment-form">
+                                        <div class="form-group">
+                                            <label for="bank-select">Select Your Bank *</label>
+                                            <select id="bank-select" required>
+                                                <option value="" disabled selected>Choose your bank</option>
+                                                <option value="sbi">State Bank of India</option>
+                                                <option value="hdfc">HDFC Bank</option>
+                                                <option value="icici">ICICI Bank</option>
+                                                <option value="axis">Axis Bank</option>
+                                                <option value="kotak">Kotak Mahindra Bank</option>
+                                                <option value="pnb">Punjab National Bank</option>
+                                                <option value="bob">Bank of Baroda</option>
+                                                <option value="canara">Canara Bank</option>
+                                                <option value="other">Other Banks</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="popular-banks">
+                                            <div class="bank-option">
+                                                <input type="radio" id="sbi" name="bank" value="sbi">
+                                                <label for="sbi">
+                                                    <img src="images/sbi.svg" alt="SBI">
+                                                    <span>SBI</span>
+                                                </label>
+                                            </div>
+                                            <div class="bank-option">
+                                                <input type="radio" id="hdfc" name="bank" value="hdfc">
+                                                <label for="hdfc">
+                                                    <img src="images/hdfc.svg" alt="HDFC">
+                                                    <span>HDFC</span>
+                                                </label>
+                                            </div>
+                                            <div class="bank-option">
+                                                <input type="radio" id="icici" name="bank" value="icici">
+                                                <label for="icici">
+                                                    <img src="images/icici.svg" alt="ICICI">
+                                                    <span>ICICI</span>
+                                                </label>
+                                            </div>
+                                            <div class="bank-option">
+                                                <input type="radio" id="axis" name="bank" value="axis">
+                                                <label for="axis">
+                                                    <img src="images/axis.svg" alt="Axis">
+                                                    <span>Axis</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="note">You will be redirected to your bank's website to complete the payment.</p>
+                                        
+                                        <button type="submit" class="btn-primary btn-full">Proceed to NetBanking</button>
+                                    </form>
+                                </div>
+                                
+                                <div class="payment-tab-content hidden" id="wallet-tab">
+                                    <form id="wallet-payment-form">
+                                        <div class="wallet-options">
+                                            <div class="wallet-option">
+                                                <input type="radio" id="paytm" name="wallet" value="paytm" checked>
+                                                <label for="paytm">
+                                                    <img src="images/paytm.svg" alt="Paytm">
+                                                    <span>Paytm</span>
+                                                </label>
+                                            </div>
+                                            <div class="wallet-option">
+                                                <input type="radio" id="phonepe" name="wallet" value="phonepe">
+                                                <label for="phonepe">
+                                                    <img src="images/phonepe.svg" alt="PhonePe">
+                                                    <span>PhonePe</span>
+                                                </label>
+                                            </div>
+                                            <div class="wallet-option">
+                                                <input type="radio" id="amazonpay" name="wallet" value="amazonpay">
+                                                <label for="amazonpay">
+                                                    <img src="images/amazonpay.svg" alt="Amazon Pay">
+                                                    <span>Amazon Pay</span>
+                                                </label>
+                                            </div>
+                                            <div class="wallet-option">
+                                                <input type="radio" id="mobikwik" name="wallet" value="mobikwik">
+                                                <label for="mobikwik">
+                                                    <img src="images/mobikwik.svg" alt="MobiKwik">
+                                                    <span>MobiKwik</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="note">You will be redirected to complete the payment.</p>
+                                        
+                                        <button type="submit" class="btn-primary btn-full">Pay Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-sidebar">
+                            <div class="plan-features-summary">
+                                <h3>Plan Features</h3>
+                                <ul id="plan-features-list">
+                                    <li>Unlimited URL checks</li>
+                                    <li>Detailed safety analysis</li>
+                                    <li>Browser extension</li>
+                                    <li>Bulk URL checking (up to 100)</li>
+                                    <li>Email alerts for risky sites</li>
+                                    <li>Basic API access (100 calls/day)</li>
+                                    <li>Priority support</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="payment-security">
+                                <div class="security-icon">
+                                    <img src="images/secure.svg" alt="Secure Payment">
+                                </div>
+                                <div class="security-info">
+                                    <h4>Secure Payment</h4>
+                                    <p>Your payment information is secure. We use industry-standard encryption to protect your data.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-guarantee">
+                                <div class="guarantee-icon">
+                                    <img src="images/guarantee.svg" alt="Money-back Guarantee">
+                                </div>
+                                <div class="guarantee-info">
+                                    <h4>14-Day Money-Back Guarantee</h4>
+                                    <p>If you're not satisfied with our service, you can request a full refund within 14 days of your purchase.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="need-help">
+                                <h4>Need Help?</h4>
+                                <p>If you have any questions or need assistance, please contact our support team.</p>
+                                <a href="support.html" class="btn-text">Contact Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SafeURL</h3>
+                    <p>Making the internet safer, one URL at a time.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="#" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="#" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="url-checker.html">URL Checker</a></li>
+                        <li><a href="report-scam.html">Report a Scam</a></li>
+                        <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Security Tips</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SinhaSafe URL. All rights reserved.</p>
+                <a href="feedback.html">Provide Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>
